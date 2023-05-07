@@ -1,11 +1,9 @@
-from colabcode import ColabCode
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional, List
 import json
 import uvicorn
 from pyngrok import ngrok, conf, installer
-from fastapi.middleware.cors import CORSMiddleware
 
 import os
 import pandas as pd
@@ -14,7 +12,6 @@ from transformers import GPT2TokenizerFast
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 from langchain.chains import ConversationalRetrievalChain
